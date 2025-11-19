@@ -13,8 +13,16 @@ class Barang extends Controller
      */
     public function index($id)
     {
+        // Variabel $isi_data diatur ke 0 agar memicu blok @else
+        $isi_data = 0; 
+        
+        // $max_loop diatur ke 5 agar loop berhenti di 5
+        $max_loop = 5; 
+
         return view('barang', [
-            'data' => $id
+            'data' => $id,
+            'isi_data' => $isi_data, // Mengirim 0 ke view
+            'max_loop' => $max_loop // Mengirim 5 ke view
         ]);
     }
 
