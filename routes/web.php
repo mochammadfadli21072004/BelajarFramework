@@ -40,3 +40,7 @@ Route::group(['prefix' => 'admin'], function(){
 });
 
 Route::get('/route_cont/{id}',[Barang::class, 'index']); 
+Route::get('/simpan_test', [Barang::class, 'simpan_get']); 
+Route::get('/hapus_test/{id}', [Barang::class, 'hapus_get']); 
+Route::get('/update_test/{id}', [Barang::class, 'update_get']);
+Route::get('/view_test', [Barang::class, 'view_get']);

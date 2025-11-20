@@ -7,5 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Products extends Model
 {
-    // protected $table = 'products';
+    protected $fillable = [
+    'name',
+     'stock',
+     'brand',
+     'buy_price',
+     'sale_price',
+     'comment',
+     ];
+
+     protected $primaryKey = 'products_id';
+
+    protected $table = 'products';
+
 }
