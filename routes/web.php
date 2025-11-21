@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Barang;
+use App\Http\Controllers\Pelanggan;
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\ProductsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +22,7 @@ Route::get('/iloveyou', function () {
 });
 
 Route::get('/', function () {
-    echo "julia galak";
+    echo "julia SAYANG";
 });
 
 Route ::view('/panggil_view','welcome');
@@ -44,3 +48,8 @@ Route::get('/simpan_test', [Barang::class, 'simpan_get']);
 Route::get('/hapus_test/{id}', [Barang::class, 'hapus_get']); 
 Route::get('/update_test/{id}', [Barang::class, 'update_get']);
 Route::get('/view_test', [Barang::class, 'view_get']);
+
+Route:: group(['prefix'=> 'products'], function(){
+    Route::get('/create', [ProductsController::class, 'create']);
+    Route::post('/store', [ProductsController::class, 'store'])->name('products.store');
+});
